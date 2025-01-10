@@ -1,4 +1,4 @@
-# WebDoggo
+# WebPets
 A Virtual Pet, The True Productivity and Play Companion 🐾✨
 
 Meet your new companion: an adorable virtual pet that helps you stay productive while keeping life fun and social! Whether you're tackling tasks, meeting new people, or just need a playful break, this extension has got you covered.
