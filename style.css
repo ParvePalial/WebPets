@@ -1,0 +1,264 @@
+body {
+    width: 350px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f9fa;
+    margin: 0;
+  }
+  
+  #pet-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  #pet-name {
+    font-size: 24px;
+    margin: 5px 0;
+    color: #4b56d2;
+  }
+  
+  #stats {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    width: 100%;
+  }
+  
+  .stat-item {
+    margin: 5px 0;
+    width: 100%;
+  }
+  
+  #stats p {
+    margin: 5px 0;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #pet-image {
+    margin: 10px 0;
+    position: relative;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #pet-image img {
+    max-width: 150px;
+    max-height: 150px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s, opacity 0.3s;
+    cursor: pointer;
+    object-fit: contain;
+  }
+  
+  #pet-image img:hover {
+    transform: scale(1.05);
+  }
+  
+  #actions {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+  }
+  
+  button {
+    padding: 8px 12px;
+    background-color: #4b56d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-size: 14px;
+  }
+  
+  button:hover {
+    background-color: #3a46c1;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  #voice-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff6b6b;
+  }
+  
+  #voice-btn:hover {
+    background-color: #ff5252;
+  }
+  
+  /* Tabs */
+  #tabs {
+    display: flex;
+    margin: 20px 0 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tab-btn {
+    flex: 1;
+    padding: 8px 0;
+    background-color: transparent;
+    color: #555;
+    border-radius: 5px 5px 0 0;
+    margin: 0 2px;
+  }
+  
+  .tab-btn.active {
+    background-color: #4b56d2;
+    color: white;
+  }
+  
+  .tab-panel {
+    display: none;
+    padding: 15px 0;
+  }
+  
+  .tab-panel.active {
+    display: block;
+  }
+  
+  /* Games Tab */
+  .game-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .game-item {
+    background-color: #f0f0f0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .game-item:hover {
+    background-color: #e0e0e0;
+  }
+  
+  #game-area {
+    min-height: 150px;
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: none;
+  }
+  
+  /* Social Tab */
+  #friends-list {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    min-height: 80px;
+  }
+  
+  #find-friend-btn {
+    margin-top: 10px;
+  }
+  
+  /* Chat Tab */
+  #chat-messages {
+    height: 150px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  #chat-input {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  #ai-prompt {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+  }
+  
+  #send-btn {
+    border-radius: 0 8px 8px 0;
+  }
+  
+  /* Settings link */
+  .settings-link {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  
+  .settings-link a {
+    color: #4b56d2;
+    text-decoration: none;
+  }
+  
+  .settings-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animation classes */
+  .bounce {
+    animation: bounce 0.5s;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  #api-status {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    width: 0%; /* Will be set by JS */
+    transition: width 0.5s ease;
+  }
+  
+  .happiness-fill {
+    background-color: #ff6b6b;
+  }
+  
+  .energy-fill {
+    background-color: #4b56d2;
+  }
+  
+  .productivity-fill {
+    background-color: #4CAF50;
+  }
+  
+  .hunger-fill {
+    background-color: #FF9800;
+  }

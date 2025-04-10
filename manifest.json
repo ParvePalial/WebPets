@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "WebPets",
+    "version": "1.0",
+    "description": "A virtual pet that helps you stay productive while keeping life fun and social!",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "notifications",
+      "identity"
+    ],
+    "host_permissions": [
+      "https://*.googleapis.com/",
+      "https://cdn.jsdelivr.net/"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "192": "images/android-chrome-192x192.png",
+        "512": "images/android-chrome-512x512.png"
+      }
+    },
+    "icons": {
+        "192": "images/android-chrome-192x192.png",
+        "512": "images/android-chrome-512x512.png"
+    },
+    "options_page": "options.html",
+    "content_security_policy": {
+      "extension_pages": "script-src 'self' https://cdn.jsdelivr.net; object-src 'self'"
+    }
+}
