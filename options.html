@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebPets Options</title>
+  <script src="https://cdn.jsdelivr.net/npm/@google/generative-ai@0.2.0/dist/index.min.js"></script>
+  <script>
+    // Make sure GoogleGenerativeAI is globally available
+    window.GoogleGenerativeAI = window.GoogleGenerativeAI || window.google?.generativeAI?.GenerativeModel;
+    
+    // Fallback implementation if library fails to load
+    if (!window.GoogleGenerativeAI) {
+      console.warn("Google Generative AI library not loaded properly. Creating fallback implementation.");
+      
+      window.GoogleGenerativeAI = function(apiKey) {
+        this.apiKey = apiKey;
+        
+        this.getGenerativeModel = function(options) {
+          return {
+            generateContent: function(prompt) {
+              console.log("Fallback generateContent called with:", prompt);
+              return Promise.reject(new Error("Google Generative AI library not available"));
+            }
+          };
+        };
+      };
+    }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #f8f9fa;
+    }
+    
+    h1 {
+      color: #4b56d2;
+      margin-bottom: 20px;
+    }
+    
+    .option-group {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    
+    button {
+      padding: 10px 15px;
+      background-color: #4b56d2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #3a46c1;
+    }
+    
+    .info {
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+    }
+    
+    .status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+<body>
+  <h1>WebPets Settings</h1>
+  
+  <div class="option-group">
+    <h2>API Configuration</h2>
+    <p>Configure your Gemini API key to enable AI chat with your pet.</p>
+    
+    <div>
+      <label for="gemini-api-key">Gemini API Key:</label>
+      <input type="text" id="gemini-api-key" placeholder="Enter your Gemini API key">
+      
+      <p class="info">
+        You can get a Gemini API key from <a href="https://ai.google.dev/" target="_blank">Google AI Studio</a>.
+        The API key will only be stored locally in your browser.
+      </p>
+      
+      <button id="save-api-key">Save API Key</button>
+      <div id="status-message"></div>
+    </div>
+  </div>
+  
+  <div class="option-group">
+    <h2>Pet Settings</h2>
+    <div>
+      <label for="pet-name">Pet Name:</label>
+      <input type="text" id="pet-name" placeholder="Enter your pet's name">
+      
+      <p class="info">
+        Change your pet's name to personalize your experience.
+      </p>
+      
+      <button id="save-pet-name">Save Pet Name</button>
+    </div>
+  </div>
+  
+  <script src="config.js"></script>
+  <script src="options.js"></script>
+</body>
+</html> 
