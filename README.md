@@ -18,7 +18,7 @@ Smart Chat Support: Use the built-in Chat API to ask questions, get answers, and
 Natural Interactions: Your pet can respond to your queries in a fun and engaging way.
 
 
-![demo of program in action](./images/doggoprev.gif =250x)
+<img src="./images/doggoprev.gif" width="300" alt="Demo of Webdoggo in action">
 
 
 🚀 Getting Started
