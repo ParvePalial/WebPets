@@ -17,6 +17,10 @@ Group Activities: Collaborate or compete in group games with others and their pe
 Smart Chat Support: Use the built-in Chat API to ask questions, get answers, and stay informed.
 Natural Interactions: Your pet can respond to your queries in a fun and engaging way.
 
+
+![demo of program in action](./images/doggoprev.gif)
+
+
 🚀 Getting Started
 
 
